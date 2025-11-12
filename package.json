@@ -1,0 +1,17 @@
+{
+  "name": "doe-1-real-backend",
+  "version": "1.0.0",
+  "description": "Backend para o site Doe 1 Real",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "initdb": "node database.js"
+  },
+  "author": "Gemini",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}

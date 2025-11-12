@@ -1,0 +1,19 @@
+/* Define a fonte Inter como padrão, importada no HTML */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Oculta todas as seções de página por padrão */
+.page-section {
+    display: none;
+}
+
+/* Mostra a primeira página (home) por padrão */
+#page-home {
+    display: block;
+}
+
+/* Estilo adicional para os links de navegação */
+.nav-link {
+    @apply text-gray-600 hover:text-blue-600 transition duration-200;
+}
