@@ -1,125 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div class="container">
-        <h1>Projeto Doe 1 Real</h1>
+# Projeto Doe 1 Real
 
-        <p>Este é um projeto full-stack de um site de doações chamado "Doe 1 Real". Ele permite que usuários se cadastrem, façam login, doem quantias (começando em R$ 1,00) via uma simulação de PIX, e vejam um leaderboard dos maiores doadores.</p>
+---
 
-        <p>O projeto inclui um painel de administração básico para visualizar todos os usuários cadastrados.</p>
+Este é um projeto full-stack de um site de doações chamado **Doe 1 Real**. Ele permite que usuários se cadastrem, façam login, doem quantias (começando em **R$ 1,00**) via uma simulação de PIX, e vejam um *leaderboard* dos maiores doadores.
 
-        <h2>Visão Geral da Arquitetura</h2>
+O projeto inclui um painel de administração básico para visualizar todos os usuários cadastrados.
 
-        <p>O projeto é dividido em duas partes principais:</p>
+---
 
-        <ol>
-            <li><strong>Frontend</strong>: Uma aplicação de página única (SPA) construída com HTML, CSS (TailwindCSS) e JavaScript puro. Ela é responsável por toda a interface que o usuário vê e interage.</li>
-            <li><strong>Backend</strong>: Uma API RESTful construída com Node.js e Express. Ela gerencia a lógica de negócios, autenticação (simples) e a comunicação com o banco de dados.</li>
-            <li><strong>Banco de Dados</strong>: Um banco de dados SQL (SQLite) usado para persistir os dados de usuários e doações.</li>
-        </ol>
+## Visão Geral da Arquitetura
 
-        <h2>Tecnologias Utilizadas</h2>
+O projeto é dividido em três partes principais:
 
-        <ul>
-            <li><strong>Frontend</strong>:
-                <ul>
-                    <li>HTML5</li>
-                    <li>Tailwind CSS (via CDN)</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>Feather Icons</li>
-                </ul>
-            </li>
-            <li><strong>Backend</strong>:
-                <ul>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li><code>cors</code> (para permitir a comunicação entre frontend e backend)</li>
-                </ul>
-            </li>
-            <li><strong>Banco de Dados</strong>:
-                <ul>
-                    <li>SQLite 3</li>
-                    <li><code>sqlite3</code> (driver Node.js)</li>
-                </ul>
-            </li>
-        </ul>
+1. **Frontend**  
+   Uma aplicação de página única (SPA) construída com HTML, CSS (TailwindCSS) e JavaScript puro. Responsável pela interface que o usuário vê e interage.
 
-        <h2>Funcionalidades</h2>
+2. **Backend**  
+   API RESTful construída com Node.js e Express. Gerencia a lógica de negócios, autenticação (simples) e comunicação com o banco de dados.
 
-        <ul>
-            <li>Cadastro e Login de usuários.</li>
-            <li>Login de Administrador (usuário: <code>admin</code>, senha: <code>12345678</code>).</li>
-            <li>Página de Doação com incremento (mínimo R$ 1,00).</li>
-            <li>Simulação de geração de QR Code PIX (via backend).</li>
-            <li>Leaderboard dos 10 maiores doadores (agregado por usuário).</li>
-            <li>Painel de Admin para visualização de usuários cadastrados.</li>
-        </ul>
+3. **Banco de Dados**  
+   Banco de dados SQL (SQLite) usado para persistir os dados de usuários e doações.
 
-        <h2>Como Executar Localmente</h2>
+---
 
-        <p>Para rodar este projeto, você precisará ter o <a href="https://nodejs.org/">Node.js</a> (que inclui o npm) instalado em sua máquina.</p>
+## Tecnologias Utilizadas
 
-        <h3>1. Clone ou Salve os Arquivos</h3>
+- **Frontend**
+  - HTML5
+  - Tailwind CSS (via CDN)
+  - JavaScript (ES6+)
+  - Feather Icons
 
-        <p>Baixe ou salve todos os arquivos do projeto (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>, <code>server.js</code>, <code>database.js</code>, <code>package.json</code>) na mesma pasta.</p>
+- **Backend**
+  - Node.js
+  - Express.js
+  - `cors` (para permitir a comunicação entre frontend e backend)
 
-        <h3>2. Abra o Terminal</h3>
+- **Banco de Dados**
+  - SQLite 3
+  - `sqlite3` (driver Node.js)
 
-        <p>Abra seu terminal (Prompt de Comando, PowerShell, Git Bash, etc.) e navegue até a pasta do projeto.</p>
+---
 
-<pre><code>cd caminho/para/seu/projeto
-</code></pre>
+## Funcionalidades
 
-        <h3>3. Instale as Dependências</h3>
+- Cadastro e Login de usuários.
+- Login de Administrador (usuário: `admin`, senha: `12345678`).
+- Página de Doação com incremento (mínimo R$ 1,00).
+- Simulação de geração de QR Code PIX (via backend).
+- Leaderboard dos 10 maiores doadores (agregado por usuário).
+- Painel de Admin para visualização de usuários cadastrados.
 
-        <p>Execute o comando abaixo para instalar as dependências do backend (Express, CORS e SQLite3) listadas no <code>package.json</code>:</p>
+---
 
-<pre><code>npm install
-</code></pre>
+## Como Executar Localmente
 
-        <h3>4. Inicialize o Banco de Dados</h3>
+> Para rodar este projeto, você precisará ter o [Node.js](https://nodejs.org/) (que inclui o npm) instalado em sua máquina.
 
-        <p>O <code>server.js</code> chama o <code>database.js</code> automaticamente, que cria o arquivo <code>doe1real.db</code> e as tabelas (se não existirem) na primeira vez que o servidor é iniciado.</p>
+### 1. Clone ou salve os arquivos
+Baixe ou salve todos os arquivos do projeto (`index.html`, `style.css`, `script.js`, `server.js`, `database.js`, `package.json`) na mesma pasta.
 
-        <p><em>Opcional: Se você quiser apenas criar o banco de dados sem iniciar o servidor, pode usar o script definido no <code>package.json</code>:</em></p>
+### 2. Abra o terminal
+Abra seu terminal (Prompt de Comando, PowerShell, Git Bash, etc.) e navegue até a pasta do projeto:
 
-<pre><code>npm run initdb
-</code></pre>
+```bash
+cd caminho/para/seu/projeto
+```
 
-        <h3>5. Inicie o Servidor</h3>
+### 3. Instale as dependências
 
-        <p>Após a instalação, inicie o servidor de backend:</p>
+```bash
+npm install
+```
 
-<pre><code>npm start
-</code></pre>
+### 4. Inicialize o banco de dados
 
-        <p>Ou, se você quiser que o servidor reinicie automaticamente após qualquer alteração nos arquivos do backend (modo de desenvolvimento):</p>
+O `server.js` chama o `database.js` automaticamente, que cria o arquivo `doe1real.db` e as tabelas (se não existirem) na primeira vez que o servidor é iniciado.
 
-<pre><code>npm run dev
-</code></pre>
+> Opcional: se você quiser apenas criar o banco de dados sem iniciar o servidor, use o script definido no `package.json`:
 
-        <p>Você deverá ver a seguinte mensagem no seu terminal, indicando que o backend está rodando:</p>
+```bash
+npm run initdb
+```
 
-<pre><code>Servidor rodando em http://localhost:3000
+### 5. Inicie o servidor
+
+```bash
+npm start
+```
+
+Ou para desenvolvimento com reinício automático (se estiver configurado):
+
+```bash
+npm run dev
+```
+
+Você deverá ver mensagens parecidas com:
+
+```
+Servidor rodando em http://localhost:3000
 Banco de dados inicializado.
 Conectado ao banco de dados SQLite.
-</code></pre>
+```
 
-        <h3>6. Acesse a Aplicação</h3>
+### 6. Acesse a aplicação
 
-        <p>Abra seu navegador de internet (Chrome, Firefox, Edge, etc.) e acesse o seguinte endereço:</p>
+Abra o navegador e acesse:
 
-        <p><code>http://localhost:3000</code></p>
+```
+http://localhost:3000
+```
 
-        <p>O <code>server.js</code> servirá o <code>index.html</code> e a aplicação estará pronta para uso.</p>
+O `server.js` servirá o `index.html` e a aplicação estará pronta para uso.
 
-        <hr>
+---
 
-        <p><strong>AVISO DE SEGURANÇA:</strong> Este projeto é um protótipo para fins educacionais. Ele armazena senhas em <strong>texto puro</strong> no banco de dados, o que é uma prática de segurança <strong>extremamente ruim</strong>. Em um ambiente de produção, senhas devem <strong>sempre</strong> ser "hasheadas" usando um algoritmo forte como o <code>bcrypt</code>.</p>
-    </div>
-</body>
-</html>
+## Aviso de Segurança
+
+**AVISO DE SEGURANÇA:** Este projeto é um **protótipo para fins educacionais**. Ele armazena senhas em **texto puro** no banco de dados, o que é uma prática de segurança **extremamente ruim**. Em um ambiente de produção, senhas devem **sempre** ser armazenadas com hash usando um algoritmo forte como `bcrypt`.
+
+---
+
+## Estrutura de Arquivos (exemplo)
+
+```
+/doe1real
+├─ index.html
+├─ style.css
+├─ script.js
+├─ server.js
+├─ database.js
+├─ package.json
+└─ README.md
+```
