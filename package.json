@@ -1,17 +1,19 @@
 {
-  "name": "doe-1-real-backend",
+  "name": "doe-1-real-backend-sqlite",
   "version": "1.0.0",
-  "description": "Backend para o site Doe 1 Real",
+  "description": "Backend para o site Doe 1 Real (com SQLite)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js",
-    "initdb": "node database.js"
+    "dev": "node server.js",
+    "setup-db": "node database.js"
   },
-  "author": "Gemini",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
